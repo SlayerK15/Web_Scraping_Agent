@@ -1,0 +1,41 @@
+{
+    "scraping": {
+      "max_retries": 3,
+      "delay_between_requests": [2, 5],
+      "timeout": 30,
+      "use_proxy": false,
+      "proxy_service": "scraperapi",
+      "proxy_api_key": "",
+      "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.5"
+      },
+      "user_agents": [
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0",
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36",
+        "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1"
+      ]
+    },
+    "processing": {
+      "remove_duplicates": true,
+      "fill_missing_values": true,
+      "add_derived_fields": true,
+      "date_format": "%Y-%m-%d",
+      "default_currency": "USD"
+    },
+    "output": {
+      "format": "xlsx",
+      "backup_formats": ["csv", "json"],
+      "output_dir": "output",
+      "filename_template": "{job_name}_{date}"
+    },
+    "logging": {
+      "level": "INFO",
+      "file": "logs/agent.log",
+      "max_size": 10485760,
+      "backup_count": 5
+    }
+  }

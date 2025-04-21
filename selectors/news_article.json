@@ -1,0 +1,72 @@
+{
+    "type": "css",
+    "selector": "article, .news-item, .article-item, .post",
+    "extract": {
+      "title": {
+        "type": "text",
+        "selector": "h1, .article-title, .headline, .title",
+        "required": true
+      },
+      "subtitle": {
+        "type": "text",
+        "selector": "h2, .article-subtitle, .subheadline, .summary",
+        "required": false
+      },
+      "author": {
+        "type": "text",
+        "selector": ".author, .byline, .article-author, .writer",
+        "required": false
+      },
+      "publication_date": {
+        "type": "text",
+        "selector": ".date, .published-date, .article-date, time",
+        "required": false
+      },
+      "content": {
+        "type": "text",
+        "selector": ".article-content, .content, .article-body, .story-content",
+        "required": false
+      },
+      "category": {
+        "type": "text",
+        "selector": ".category, .section, .article-category",
+        "required": false
+      },
+      "featured_image": {
+        "type": "attribute",
+        "selector": ".featured-image img, .article-image img, .main-image img",
+        "attribute": "src",
+        "required": false
+      },
+      "article_url": {
+        "type": "attribute",
+        "selector": "a.article-link, a.read-more, .headline a",
+        "attribute": "href",
+        "required": false
+      },
+      "tags": {
+        "type": "text",
+        "selector": ".tags, .article-tags, .keywords",
+        "required": false,
+        "multiple": true
+      },
+      "comment_count": {
+        "type": "text",
+        "selector": ".comment-count, .comments-count",
+        "required": false
+      }
+    },
+    "pagination": {
+      "next_page": {
+        "type": "attribute",
+        "selector": ".pagination a.next, .next-page, a[rel='next']",
+        "attribute": "href"
+      },
+      "max_pages": 3
+    },
+    "options": {
+      "wait_for_selector": "article, .news-item",
+      "wait_time": 3,
+      "process_javascript": false
+    }
+  }

@@ -1,0 +1,47 @@
+{
+    "services": {
+      "scraperapi": {
+        "url_template": "http://api.scraperapi.com?api_key={api_key}&url={target_url}",
+        "headers": {},
+        "params": {
+          "country_code": "us",
+          "render": "false"
+        },
+        "max_retries": 3,
+        "retry_delay": 10
+      },
+      "scrapingbee": {
+        "url_template": "https://app.scrapingbee.com/api/v1/?api_key={api_key}&url={target_url}",
+        "headers": {},
+        "params": {
+          "premium_proxy": "true",
+          "render_js": "false"
+        },
+        "max_retries": 3,
+        "retry_delay": 5
+      },
+      "brightdata": {
+        "url_template": "https://brightdata.com/proxy?api_key={api_key}&url={target_url}",
+        "headers": {
+          "X-Bright-Client": "web-scraping-agent"
+        },
+        "params": {
+          "country": "us",
+          "session_id": "{session_id}"
+        },
+        "max_retries": 5,
+        "retry_delay": 3
+      },
+      "zenscrape": {
+        "url_template": "https://app.zenscrape.com/api/v1/get?apikey={api_key}&url={target_url}",
+        "headers": {},
+        "params": {
+          "location": "na",
+          "premium": "true"
+        },
+        "max_retries": 3,
+        "retry_delay": 5
+      }
+    },
+    "default": "scraperapi"
+  }

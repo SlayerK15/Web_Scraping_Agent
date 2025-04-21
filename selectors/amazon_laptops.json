@@ -1,0 +1,57 @@
+{
+    "type": "css",
+    "selector": "div[data-component-type='s-search-result']",
+    "extract": {
+      "title": {
+        "type": "text",
+        "selector": "h2 a span",
+        "required": true
+      },
+      "brand": {
+        "type": "text",
+        "selector": ".a-size-base-plus.a-color-base",
+        "required": false
+      },
+      "url": {
+        "type": "attribute",
+        "selector": "h2 a",
+        "attribute": "href",
+        "required": false
+      },
+      "image": {
+        "type": "attribute",
+        "selector": "img.s-image",
+        "attribute": "src",
+        "required": false
+      },
+      "price": {
+        "type": "text",
+        "selector": ".a-price .a-offscreen",
+        "required": false
+      },
+      "rating": {
+        "type": "text",
+        "selector": ".a-icon-alt",
+        "required": false
+      },
+      "specs": {
+        "type": "text",
+        "selector": ".a-size-base:not(.a-color-base)",
+        "required": false,
+        "multiple": true
+      }
+    },
+    "pagination": {
+      "next_page": {
+        "type": "attribute",
+        "selector": ".s-pagination-next",
+        "attribute": "href"
+      },
+      "max_pages": 3
+    },
+    "options": {
+      "wait_for_selector": "div[data-component-type='s-search-result']",
+      "wait_time": 5,
+      "process_javascript": false
+    }
+  }

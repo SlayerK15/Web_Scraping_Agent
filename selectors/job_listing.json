@@ -1,0 +1,96 @@
+{
+    "type": "css",
+    "selector": ".job-listing, .job-card, .job-item, .job-posting, article.job",
+    "extract": {
+      "job_title": {
+        "type": "text",
+        "selector": ".job-title, h2, h3, .position-title",
+        "required": true
+      },
+      "company_name": {
+        "type": "text",
+        "selector": ".company-name, .employer, .organization",
+        "required": false
+      },
+      "location": {
+        "type": "text",
+        "selector": ".location, .job-location, .city",
+        "required": false
+      },
+      "salary": {
+        "type": "text",
+        "selector": ".salary, .compensation, .pay-range",
+        "required": false
+      },
+      "job_type": {
+        "type": "text",
+        "selector": ".job-type, .employment-type, .work-type",
+        "required": false
+      },
+      "job_description": {
+        "type": "text",
+        "selector": ".job-description, .description, .summary",
+        "required": false
+      },
+      "requirements": {
+        "type": "text",
+        "selector": ".requirements, .qualifications, .skills",
+        "required": false
+      },
+      "experience_level": {
+        "type": "text",
+        "selector": ".experience, .experience-level, .seniority",
+        "required": false
+      },
+      "education": {
+        "type": "text",
+        "selector": ".education, .degree, .education-requirements",
+        "required": false
+      },
+      "benefits": {
+        "type": "text",
+        "selector": ".benefits, .perks, .compensation-benefits",
+        "required": false
+      },
+      "posted_date": {
+        "type": "text",
+        "selector": ".posted-date, .date-posted, .listing-date",
+        "required": false
+      },
+      "application_deadline": {
+        "type": "text",
+        "selector": ".deadline, .closing-date, .application-deadline",
+        "required": false
+      },
+      "job_url": {
+        "type": "attribute",
+        "selector": "a.job-link, a.apply-link, .job-title a, h2 a",
+        "attribute": "href",
+        "required": false
+      },
+      "company_logo": {
+        "type": "attribute",
+        "selector": ".company-logo img, .employer-logo img",
+        "attribute": "src",
+        "required": false
+      },
+      "remote": {
+        "type": "text",
+        "selector": ".remote, .remote-indicator, .work-from-home",
+        "required": false
+      }
+    },
+    "pagination": {
+      "next_page": {
+        "type": "attribute",
+        "selector": "a.next-page, .pagination a.next, a[rel='next']",
+        "attribute": "href"
+      },
+      "max_pages": 10
+    },
+    "options": {
+      "wait_for_selector": ".job-listing, .job-card",
+      "wait_time": 3,
+      "process_javascript": false
+    }
+  }
