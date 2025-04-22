@@ -1,8 +1,0 @@
-README.md
-setup.py
-web_scraping_agent.egg-info/PKG-INFO
-web_scraping_agent.egg-info/SOURCES.txt
-web_scraping_agent.egg-info/dependency_links.txt
-web_scraping_agent.egg-info/entry_points.txt
-web_scraping_agent.egg-info/requires.txt
-web_scraping_agent.egg-info/top_level.txt

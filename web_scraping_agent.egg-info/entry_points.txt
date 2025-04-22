@@ -1,3 +1,0 @@
-[console_scripts]
-scraper-agent = web_scraping_agent.cli:main
-scraper-api = web_scraping_agent.api_server:start
