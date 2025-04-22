@@ -1,0 +1,8 @@
+.env
+.storage/
+.tests/
+.scrapervenv/
+.vscode/
+.idea/
+.pytest_cache/
+.ruff_cache/

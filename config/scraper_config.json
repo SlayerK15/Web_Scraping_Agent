@@ -1,0 +1,60 @@
+{
+    "request_timeout": 30,
+    "use_proxy": true,
+    "use_dns_protection": true,
+    "max_retries": 3,
+    "retry_delay": 2,
+    "backoff_factor": 2.0,
+    "user_agents": [
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0",
+      "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.1 Safari/605.1.15",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.59",
+      "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36",
+      "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1",
+      "Mozilla/5.0 (iPad; CPU OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0 Mobile/15E148 Safari/604.1",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.107 Safari/537.36",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:90.0) Gecko/20100101 Firefox/90.0"
+    ],
+    "headers": {
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+      "Accept-Language": "en-US,en;q=0.5",
+      "Referer": "https://www.google.com/",
+      "DNT": "1",
+      "Connection": "keep-alive",
+      "Upgrade-Insecure-Requests": "1",
+      "Cache-Control": "max-age=0"
+    },
+    "anti_bot_measures": {
+      "browser_fingerprinting": true,
+      "randomize_headers": true,
+      "respect_robots_txt": false,
+      "mimic_browser_behavior": true,
+      "delay": {
+        "min": 1,
+        "max": 5
+      }
+    },
+    "pagination": {
+      "default_method": "link",
+      "parameter_name": "page",
+      "max_pages_default": 10
+    },
+    "error_handling": {
+      "retry_status_codes": [429, 500, 502, 503, 504],
+      "max_connection_errors": 5,
+      "max_timeout_errors": 3
+    },
+    "content_parsing": {
+      "default_parser": "html.parser",
+      "fallback_parser": "lxml",
+      "extract_javascript": false,
+      "handle_lazy_loading": true
+    },
+    "storage": {
+      "save_raw_html": false,
+      "compress_raw_html": true,
+      "data_format": "csv",
+      "backup_interval": 100
+    }
+  }

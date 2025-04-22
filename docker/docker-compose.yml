@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  web-scraper:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    image: web-scraper-ai:latest
+    container_name: web-scraper-container
+    restart: unless-stopped
+    volumes:
+      - ../storage:/app/storage
+      - ../logs:/app/logs
+      - ../config:/app/config
+    environment:
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - BRIGHTDATA_API_KEY=${BRIGHTDATA_API_KEY}
+      - SCRAPERAPI_API_KEY=${SCRAPERAPI_API_KEY}
+      - ZYTE_API_KEY=${ZYTE_API_KEY}
+      - SCRAPER_GENERAL__DEBUG=false
+      - SCRAPER_AI__PROVIDER=anthropic
+      - SCRAPER_SCRAPER__USE_PROXY=true
+      - SCRAPER_SCRAPER__USE_DNS_PROTECTION=true
+    network_mode: "host"  # Use host network for better connectivity
+    command: ["python", "-m", "main", "--url", "${URL}", "--data", "${DATA}", "--pages", "${PAGES:-1}", "--format", "${FORMAT:-csv}"]

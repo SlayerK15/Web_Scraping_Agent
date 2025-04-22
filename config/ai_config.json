@@ -1,0 +1,26 @@
+{
+    "provider": "anthropic",
+    "model": "claude-3-opus-20240229",
+    "temperature": 0.2,
+    "max_tokens": 1000,
+    "providers": {
+      "anthropic": {
+        "model": "claude-3-opus-20240229",
+        "temperature": 0.2,
+        "max_tokens": 1000,
+        "api_url": "https://api.anthropic.com/v1/messages"
+      },
+      "openai": {
+        "model": "gpt-4",
+        "temperature": 0.2,
+        "max_tokens": 1000,
+        "api_url": "https://api.openai.com/v1/chat/completions"
+      }
+    },
+    "selector_generation": {
+      "prompt_template": "I need to scrape data from the website: {url}\n\nThe data I want to extract is: {data_description}\n\nPlease generate CSS selectors that would efficiently extract this data from the webpage.\nFor each type of data, provide:\n1. A descriptive name for the data element\n2. The CSS selector to extract it\n3. The type of data (text, attribute, etc.)\n4. Any post-processing needed\n\nFormat your response as valid JSON that I can directly use in my scraper, following this structure:\n{\n    \"selectors\": [\n        {\n            \"name\": \"data_element_name\",\n            \"selector\": \"css_selector\",\n            \"type\": \"text|attribute|href|etc\",\n            \"attribute\": \"attribute_name_if_applicable\",\n            \"multiple\": true|false,\n            \"post_processing\": \"any_regex_or_transformation_needed\"\n        }\n    ],\n    \"pagination\": {\n        \"selector\": \"selector_for_next_page_button\",\n        \"type\": \"link|button|etc\"\n    }\n}\n\nReturn ONLY the JSON with no additional text."
+    },
+    "selector_refinement": {
+      "prompt_template": "I need to improve my CSS selectors for scraping data from: {url}\n\nThe data I want to extract is: {data_description}\n\nThese are my current selectors:\n{selectors}\n\nPagination selector:\n{pagination}\n\nThe problem/feedback I received is:\n{feedback}\n\nPlease provide improved CSS selectors that address these issues. Format your response as valid JSON:\n{\n    \"selectors\": [\n        {\n            \"name\": \"data_element_name\",\n            \"selector\": \"css_selector\",\n            \"type\": \"text|attribute|href|etc\",\n            \"attribute\": \"attribute_name_if_applicable\",\n            \"multiple\": true|false,\n            \"post_processing\": \"any_regex_or_transformation_needed\"\n        }\n    ],\n    \"pagination\": {\n        \"selector\": \"selector_for_next_page_button\",\n        \"type\": \"link|button|etc\"\n    }\n}\n\nReturn ONLY the JSON with no additional text."
+    }
+  }
